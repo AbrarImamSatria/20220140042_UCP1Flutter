@@ -76,6 +76,23 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                   },
                 ),
+                const SizedBox(height: 40),
+                SizedBox(
+                  width: 400.0, 
+                  height: 50.0, 
+                  child: ElevatedButton(
+                    onPressed: () {
+                      
+                    },
+                    child: Text('Masuk'),
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                Text(
+                  'Belum memiliki akun?  Silahkan Daftar disini',
+                  style: TextStyle(color: Colors.red),
+                ),
               ],
             ),
           ),
