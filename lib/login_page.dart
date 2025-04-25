@@ -52,6 +52,30 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                   },
                 ),
+
+                const SizedBox(height: 36),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(
+                        color: const Color.fromARGB(255, 147, 0, 0),
+                      ),
+                    ),
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: Icon(Icons.visibility),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    return null;
+                  },
+                ),
               ],
             ),
           ),
