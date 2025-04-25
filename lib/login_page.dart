@@ -14,11 +14,30 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Form(
         key: _formKey,
-        child: Padding(padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-          ])
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment:
+                  MainAxisAlignment.center, 
+              crossAxisAlignment:
+                  CrossAxisAlignment
+                      .center, 
+              children: [
+                const Image(
+                  image: AssetImage('assets/images/nike.png'),
+                  width: 200, 
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  'SELAMAT DATANG KEMBALI',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+
+              ],
+            ),
+          ),
         ),
       ),
     );
