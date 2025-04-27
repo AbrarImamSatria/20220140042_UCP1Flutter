@@ -71,6 +71,27 @@ class DetailBarangPage extends StatelessWidget {
               ),
               const SizedBox(height: 40),
 
+              _buildInfoRow('Tanggal', tanggal ?? 'Rabu, 30 April 2025'),
+              _buildDivider(),
+              _buildInfoRow(
+                'Jenis Transaksi',
+                jenisTransaksi ?? 'Barang Masuk',
+              ),
+              _buildDivider(),
+              _buildInfoRow('Jenis Barang', jenisBarang ?? 'Carrier'),
+              _buildDivider(),
+              _buildInfoRow('Jumlah Barang', jumlahBarang ?? '30'),
+              _buildDivider(),
+              _buildInfoRow(
+                'Jenis Harga Satuan',
+                currencyFormatter.format(harga),
+              ),
+              _buildDivider(),
+              _buildInfoRow(
+                'Total Harga',
+                currencyFormatter.format(totalHarga),
+              ),
+              _buildDivider(),
 
               const SizedBox(height: 40),
 
@@ -102,5 +123,28 @@ class DetailBarangPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildInfoRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 13.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+          ),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDivider() {
+    return const Divider(color: Colors.grey, thickness: 0.5);
   }
 }
