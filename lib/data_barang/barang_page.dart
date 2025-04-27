@@ -102,7 +102,7 @@ class _BarangPageState extends State<BarangPage> {
                     }
                     return null;
                   },
-                  readOnly: true, 
+                  readOnly: true,
                   onTap: () async {
                     final DateTime? pickedDate = await showDatePicker(
                       context: context,
@@ -323,15 +323,22 @@ class _BarangPageState extends State<BarangPage> {
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.push(
+                        // Mengirim data ke DetailBarangPage
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DetailBarangPage(),
+                            builder:
+                                (context) => DetailBarangPage(
+                                  tanggal: tanggalController.text,
+                                  jenisTransaksi: jenisTransaksi,
+                                  jenisBarang: jenisBarang,
+                                  jumlahBarang: jumlahBarangController.text,
+                                  hargaSatuan: hargaSatuanController.text,
+                                ),
                           ),
                         );
                       }
                     },
-
                     child: const Text(
                       'Submit',
                       style: TextStyle(
