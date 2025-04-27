@@ -48,6 +48,45 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
         ),
         toolbarHeight: 70,
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 30),
+            Container(
+              width: 125,
+              height: 125,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.grey[200],
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  widget.imagePath ?? 'assets/default_image.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
+            Text(
+              widget.nama ?? "Nama Kosong",
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              widget.email ?? "Email Kosong",
+              style: const TextStyle(fontSize: 14, color: Colors.black87),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 3),
+            Text(
+              widget.noHp ?? "08112212",
+              style: const TextStyle(fontSize: 14, color: Colors.black87),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
