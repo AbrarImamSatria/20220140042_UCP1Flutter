@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1_flutter/barang_page.dart';
 import 'package:ucp1_flutter/login_page.dart';
 import 'package:ucp1_flutter/pelanggan_page.dart';
 import 'package:ucp1_flutter/piket_page.dart';
@@ -164,6 +165,45 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+
+                  const SizedBox(height: 15),
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BarangPage()),
+                      );
+                    },
+                    child: Container(
+                      height: 200,
+                      margin: EdgeInsets.all(6),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1BA0E2),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.receipt_long,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Barang Masuk/Keluar',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
