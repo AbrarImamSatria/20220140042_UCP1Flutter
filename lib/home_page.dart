@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ucp1_flutter/barang_page.dart';
-import 'package:ucp1_flutter/login_page.dart';
-import 'package:ucp1_flutter/pelanggan_page.dart';
-import 'package:ucp1_flutter/piket_page.dart';
+import 'package:ucp1_flutter/data_barang/barang_page.dart';
+import 'package:ucp1_flutter/auth/login_page.dart';
+import 'package:ucp1_flutter/data_pelanggan/pelanggan_page.dart';
+import 'package:ucp1_flutter/data_piket/piket_page.dart';
 
 class HomePage extends StatelessWidget {
   final String email;
@@ -96,7 +96,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PiketPage(),
+                                builder: (context) => PiketPage(email: email),
                               ),
                             );
                           },
