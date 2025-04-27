@@ -118,6 +118,97 @@ class _BarangPageState extends State<BarangPage> {
                     }
                   },
                 ),
+
+                const SizedBox(height: 30),
+
+                DropdownButtonFormField<String>(
+                  value: jenisTransaksi,
+                  decoration: InputDecoration(
+                    hintText: 'Jenis Transaksi',
+                    labelText: 'Jenis Transaksi',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.blue),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                  ),
+                  items:
+                      jenisTransaksiOptions.map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      jenisTransaksi = newValue;
+                    });
+                  },
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Jenis transaksi harus dipilih';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 30),
+
+                DropdownButtonFormField<String>(
+                  value: jenisBarang,
+                  decoration: InputDecoration(
+                    labelText: 'Jenis Barang',
+                    hintText: 'Jenis Barang',
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.blue),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide(color: Colors.red),
+                    ),
+                  ),
+                  items:
+                      jenisBarangOptions.map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      jenisBarang = newValue;
+                    });
+                  },
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Jenis barang harus dipilih';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 30),
+
+                
+                const SizedBox(height: 32),
+
+                
               ],
             ),
           ),
