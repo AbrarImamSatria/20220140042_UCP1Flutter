@@ -241,7 +241,7 @@ class _PiketPageState extends State<PiketPage> {
                     onPressed: _tambahTugas,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: customBlue,
-                      minimumSize: const Size(120, 50),
+                      minimumSize: const Size(185, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
