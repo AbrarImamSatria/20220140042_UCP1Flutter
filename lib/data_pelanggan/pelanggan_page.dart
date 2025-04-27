@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1_flutter/data_pelanggan/detail_pelanggan_page.dart';
 
 class PelangganPage extends StatefulWidget {
   const PelangganPage({super.key});
@@ -32,9 +33,7 @@ class _PelangganPageState extends State<PelangganPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(
-          0xFF1BA0E2,
-        ), 
+        backgroundColor: Color(0xFF1BA0E2),
         elevation: 0,
         title: const Text(
           'Data Pelanggan',
@@ -61,7 +60,6 @@ class _PelangganPageState extends State<PelangganPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 const Text(
                   'Nama Cust',
                   style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
@@ -323,12 +321,21 @@ class _PelangganPageState extends State<PelangganPage> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text('Data berhasil disimpan'),
+                            backgroundColor: Colors.green,
+                            behavior: SnackBarBehavior.floating,
+                          ),
+                        );
+                        
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DetailPelangganPage(),
                           ),
                         );
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF1BA0E2), 
+                      backgroundColor: Color(0xFF1BA0E2),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -355,7 +362,8 @@ class _PelangganPageState extends State<PelangganPage> {
                       noHpController.clear();
                       alamatController.clear();
                       provinsiController.clear();
-                      kodePosController.clear();
+
+                      _formKey.currentState!.validate();
                     },
                     style: OutlinedButton.styleFrom(
                       side: BorderSide(color: Colors.grey),
@@ -366,7 +374,7 @@ class _PelangganPageState extends State<PelangganPage> {
                     child: Text(
                       'Reset',
                       style: TextStyle(
-                        color: Color(0xFF1BA0E2), 
+                        color: Color(0xFF1BA0E2),
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
