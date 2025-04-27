@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:ucp1_flutter/data_piket/detail_piket_page.dart';
 
 class PiketPage extends StatefulWidget {
   final String email;
@@ -41,8 +42,12 @@ class _PiketPageState extends State<PiketPage> {
     if (_formKey.currentState!.validate()) {
       if (tugasController.text.isNotEmpty) {
         setState(() {
-          tugasList.add({'tugas': tugasController.text});
-          // Kosongkan semua field setelah tugas ditambahkan
+          tugasList.add({
+            'tugas': tugasController.text,
+            'tanggal': tanggalController.text,
+            'nama': namaController.text,
+          });
+          // Kosongkan field tugas setelah ditambahkan
           tugasController.clear();
           tanggalController.clear();
         });
@@ -60,7 +65,7 @@ class _PiketPageState extends State<PiketPage> {
 
   @override
   Widget build(BuildContext context) {
-    final Color customOrange = Color(0xFF1BA0E2);
+    final Color customBlue = Color(0xFF1BA0E2);
 
     return Scaffold(
       appBar: AppBar(
@@ -235,8 +240,8 @@ class _PiketPageState extends State<PiketPage> {
                   ElevatedButton(
                     onPressed: _tambahTugas,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: customOrange,
-                      minimumSize: const Size(185, 50),
+                      backgroundColor: customBlue,
+                      minimumSize: const Size(120, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -285,7 +290,18 @@ class _PiketPageState extends State<PiketPage> {
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DetailPiketPage(
+                                    tugas: tugasList[index]['tugas']!,
+                                    nama: tugasList[index]['nama']!,
+                                    tanggal: tugasList[index]['tanggal']!,
+                                  ),
+                                ),
+                              );
+                            },
                             child: Container(
                               width: double.infinity,
                               padding: EdgeInsets.symmetric(
