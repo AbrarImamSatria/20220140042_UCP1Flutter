@@ -48,6 +48,50 @@ class _RegisterPageState extends State<RegisterPage> {
                       color: customBlue,
                     ),
                   ),
+
+                  const SizedBox(height: 30),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Nama Lengkap',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      TextFormField(
+                        controller: nameController,
+                        decoration: InputDecoration(
+                          hintText: 'Nama Lengkap',
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: customBlue),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: const BorderSide(color: Colors.red),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: const BorderSide(color: Colors.red),
+                          ),
+                          prefixIcon: const Icon(Icons.person),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Nama tidak boleh kosong';
+                          }
+                          return null;
+                        },
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
