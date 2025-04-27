@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1_flutter/home_page.dart';
 import 'package:ucp1_flutter/register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -148,11 +149,25 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Login sukses!')),
+                            SnackBar(
+                              content: Text('Login sukses!'),
+                              backgroundColor: Colors.green,
+                              behavior: SnackBarBehavior.floating,
+                              margin: EdgeInsets.all(10),
+                              duration: Duration(seconds: 2),
+                            ),
+                          );
+
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) =>
+                                      HomePage(email: emailController.text),
+                            ),
                           );
                         }
                       },
-
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF1BA0E2),
                         foregroundColor: Colors.white,

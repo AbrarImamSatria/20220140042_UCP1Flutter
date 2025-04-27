@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ucp1_flutter/home_page.dart';
 import 'package:ucp1_flutter/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -360,7 +361,25 @@ class _RegisterPageState extends State<RegisterPage> {
                           return;
                         }
 
-                        if (isFormValid) {}
+                        if (isFormValid) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Registrasi sukses!'),
+                              backgroundColor: Colors.green,
+                              behavior: SnackBarBehavior.floating,
+                            ),
+                          );
+
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) =>
+                                      HomePage(email: emailController.text),
+                            ),
+                            (route) => false,
+                          );
+                        }
                       },
                       child: const Text(
                         'Daftar',
@@ -368,7 +387,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 16),
 
                   Row(
