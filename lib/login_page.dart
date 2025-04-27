@@ -9,7 +9,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _obscureText = true; // State untuk menyimpan visibility password
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  bool _obscureText = true;
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -29,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                     image: AssetImage('assets/images/traveloka.png'),
                     width: 175,
                   ),
-                  const SizedBox(height: 16),
+
                   Text(
                     'SELAMAT DATANG KEMBALI',
                     style: TextStyle(
@@ -53,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
 
                   const SizedBox(height: 10),
                   TextFormField(
+                    controller: emailController,
                     decoration: InputDecoration(
                       hintText: 'Email',
                       enabledBorder: OutlineInputBorder(
@@ -62,11 +66,19 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(20),
                         borderSide: BorderSide(color: customBlue),
                       ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
                       prefixIcon: Icon(Icons.email),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your email';
+                        return 'Email tidak boleh kosong';
                       }
                       return null;
                     },
@@ -87,7 +99,8 @@ class _LoginPageState extends State<LoginPage> {
 
                   const SizedBox(height: 10),
                   TextFormField(
-                    obscureText: _obscureText, // Menggunakan state _obscureText
+                    controller: passwordController,
+                    obscureText: _obscureText,
                     decoration: InputDecoration(
                       hintText: 'Password',
                       enabledBorder: OutlineInputBorder(
@@ -96,6 +109,14 @@ class _LoginPageState extends State<LoginPage> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                         borderSide: BorderSide(color: customBlue),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.red),
                       ),
                       prefixIcon: Icon(Icons.lock),
                       suffixIcon: IconButton(
@@ -106,33 +127,39 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         onPressed: () {
                           setState(() {
-                            _obscureText = !_obscureText; // Toggle state
+                            _obscureText = !_obscureText;
                           });
                         },
                       ),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your password';
+                        return 'Password tidak boleh kosong';
                       }
                       return null;
                     },
                   ),
+
                   const SizedBox(height: 60),
                   SizedBox(
                     width: double.infinity,
                     height: 50.0,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Login sukses!')),
+                          );
+                        }
+                      },
+
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(
-                          0xFF1BA0E2,
-                        ), // Orange/red color from image
+                        backgroundColor: const Color(0xFF1BA0E2),
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14.0),
                         ),
-                        elevation: 0, // No shadow
+                        elevation: 2,
                         padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
                       child: const Text(
