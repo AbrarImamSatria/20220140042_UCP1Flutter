@@ -3,13 +3,11 @@ import 'package:ucp1_flutter/login_page.dart';
 
 class HomePage extends StatelessWidget {
   final String email;
-
   const HomePage({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
     String username = email.split('@')[0];
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF1BA0E2),
@@ -55,7 +53,7 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-              icon: Icon(Icons.logout, color: Colors.white, size: 28),
+              icon: Icon(Icons.logout, color: Colors.white, size: 24),
               onPressed: () {
                 Navigator.pushAndRemoveUntil(
                   context,
@@ -68,10 +66,19 @@ class HomePage extends StatelessWidget {
         ],
         toolbarHeight: 90,
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [],
+          children: [
+            Container(
+              width: double.infinity,
+              height: 190,
+              padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 22.0),
+              child: Image.asset(
+                'assets/images/travelokaa.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
         ),
       ),
     );
