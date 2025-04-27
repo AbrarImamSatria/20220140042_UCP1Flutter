@@ -62,14 +62,16 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
               ),
               child: ClipOval(
                 child: Image.asset(
-                  widget.imagePath ?? 'assets/default_image.png',
+                  widget.imagePath ??
+                      'assets/default_image.png', 
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             const SizedBox(height: 24),
+
             Text(
-              widget.nama ?? "Nama Kosong",
+              widget.nama ?? "Nama Koson",
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
@@ -78,13 +80,16 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
               style: const TextStyle(fontSize: 14, color: Colors.black87),
               textAlign: TextAlign.center,
             ),
+
             const SizedBox(height: 3),
             Text(
               widget.noHp ?? "08112212",
               style: const TextStyle(fontSize: 14, color: Colors.black87),
               textAlign: TextAlign.center,
             ),
+
             const SizedBox(height: 40),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -95,29 +100,32 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                     style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 8),
-                  InkWell(
-                    onTap: () {
-                      // You can add some action when clicked if needed
-                    },
-                    child: AbsorbPointer(
-                      child: TextFormField(
-                        initialValue: widget.alamat ?? "Alamat belum diisi",
-                        decoration: InputDecoration(
-                          hintText: 'Alamat',
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: const BorderSide(color: Colors.blue),
-                          ),
-                          contentPadding: const EdgeInsets.all(16),
-                        ),
-                        readOnly: true,
+                  TextFormField(
+                    initialValue: widget.alamat ?? "Alamat belum diisi",
+
+                    decoration: InputDecoration(
+                      hintText: 'Alamat',
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: const BorderSide(color: Colors.blue),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: const BorderSide(color: Colors.red),
+                      ),
+                      contentPadding: const EdgeInsets.all(16),
                     ),
                   ),
+
                   const SizedBox(height: 24),
+
                   Row(
                     children: [
                       Expanded(
@@ -132,29 +140,34 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            InkWell(
-                              onTap: () {
-                                // You can add some action when clicked if needed
-                              },
-                              child: AbsorbPointer(
-                                child: TextFormField(
-                                  initialValue:
-                                      widget.provinsi ?? "Provinsi Kosong",
-                                  decoration: InputDecoration(
-                                    hintText: 'Provinsi',
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      borderSide: const BorderSide(
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    contentPadding: const EdgeInsets.all(16),
-                                  ),
-                                  readOnly: true,
+                            TextFormField(
+                              initialValue:
+                                  widget.provinsi ?? "Provinsi Kosong",
+
+                              decoration: InputDecoration(
+                                hintText: 'Provinsi',
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: const BorderSide(
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: const BorderSide(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: const BorderSide(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                                contentPadding: const EdgeInsets.all(16),
                               ),
                             ),
                           ],
@@ -173,30 +186,34 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            InkWell(
-                              onTap: () {
-                                // You can add some action when clicked if needed
-                              },
-                              child: AbsorbPointer(
-                                child: TextFormField(
-                                  initialValue:
-                                      widget.kodePos ?? "Kode Pos Kosong",
-                                  keyboardType: TextInputType.number,
-                                  decoration: InputDecoration(
-                                    hintText: 'Kode Pos',
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      borderSide: const BorderSide(
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    contentPadding: const EdgeInsets.all(16),
-                                  ),
-                                  readOnly: true,
+                            TextFormField(
+                              initialValue: widget.kodePos ?? "Kode Pos Kosong",
+
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                hintText: 'Kode Pos',
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: const BorderSide(
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: const BorderSide(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: const BorderSide(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                                contentPadding: const EdgeInsets.all(16),
                               ),
                             ),
                           ],
@@ -207,6 +224,37 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                 ],
               ),
             ),
+
+            const SizedBox(height: 60),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: SizedBox(
+                width: double.infinity,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF1BA0E2),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: const Text(
+                    'Selesai',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 40),
           ],
         ),
       ),

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ucp1_flutter/data_pelanggan/detail_pelanggan_page.dart';
 
 class PelangganPage extends StatefulWidget {
-  const PelangganPage({super.key});
+  final String? imagePath;
+
+  const PelangganPage({super.key, this.imagePath});
 
   @override
   State<PelangganPage> createState() => _PelangganPageState();
@@ -325,11 +327,20 @@ class _PelangganPageState extends State<PelangganPage> {
                             behavior: SnackBarBehavior.floating,
                           ),
                         );
-                        
+
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DetailPelangganPage(),
+                            builder:
+                                (context) => DetailPelangganPage(
+                                  nama: namaController.text,
+                                  email: emailController.text,
+                                  noHp: noHpController.text,
+                                  alamat: alamatController.text,
+                                  provinsi: provinsiController.text,
+                                  kodePos: kodePosController.text,
+                                  imagePath: widget.imagePath,
+                                ),
                           ),
                         );
                       }

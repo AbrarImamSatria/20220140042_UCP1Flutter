@@ -131,7 +131,10 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PelangganPage(),
+                                builder:
+                                    (context) => PelangganPage(
+                                      imagePath: 'assets/images/who.jpg',
+                                    ),
                               ),
                             );
                           },
