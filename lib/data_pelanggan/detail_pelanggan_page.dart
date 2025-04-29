@@ -234,7 +234,7 @@ class _DetailPelangganPageState extends State<DetailPelangganPage> {
                 height: 60,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.of(context).popUntil((route) => route.isFirst);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF1BA0E2),

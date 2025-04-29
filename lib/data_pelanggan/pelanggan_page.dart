@@ -373,6 +373,7 @@ class _PelangganPageState extends State<PelangganPage> {
                       noHpController.clear();
                       alamatController.clear();
                       provinsiController.clear();
+                      kodePosController.clear(); 
 
                       _formKey.currentState!.validate();
                     },
