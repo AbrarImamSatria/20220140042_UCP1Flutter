@@ -1,16 +1,27 @@
-# ucp1_flutter
+# Hasil Running Aplikasi
+![Screenshot_1745929309](https://github.com/user-attachments/assets/13e2521c-1315-4a55-ace0-7dabca2a4be7)
+![Screenshot_1745929331](https://github.com/user-attachments/assets/111ef821-53ef-4872-ba9c-ad68ec359c9b)
+![Screenshot_1745929350](https://github.com/user-attachments/assets/bec08e9b-d175-4bd4-bdd1-de516b99a484)
+![Screenshot_1745929368](https://github.com/user-attachments/assets/42face5c-2a29-4dfc-8dd1-2e3e2b3c50c3)
+![Screenshot_1745929590](https://github.com/user-attachments/assets/fe11772d-9999-404a-b2af-c35925afe183)
+![Screenshot_1745929606](https://github.com/user-attachments/assets/0e227c07-802c-441c-8d24-ffcef3f3eab0)
+![Screenshot_1745929620](https://github.com/user-attachments/assets/20a7ce70-c1e4-419c-9061-337c6d7120bf)
+![Screenshot_1745929639](https://github.com/user-attachments/assets/9fe36ed7-2984-4a39-89e5-e46fe351bbfb)
+![Screenshot_1745929699](https://github.com/user-attachments/assets/2f145d73-c3f4-4101-af71-2b5b45009384)
+![Screenshot_1745929742](https://github.com/user-attachments/assets/8343ad3d-7161-4c14-9edc-f67a4f9ea1ae)
+![Screenshot_1745929767](https://github.com/user-attachments/assets/df1a6dbd-fef4-48bd-bdbe-812a0d394780)
+![Screenshot_1745929785](https://github.com/user-attachments/assets/4b604a1d-2f54-4606-8e16-eac301bf44fa)
+![Screenshot_1745929836](https://github.com/user-attachments/assets/8e4a471b-6e4f-4ea6-b3cd-66fddf0f1f3d)
+![Screenshot_1745929848](https://github.com/user-attachments/assets/8c036b9e-7335-42ff-b2a5-14da6d124c92)
+![Screenshot_1745930282](https://github.com/user-attachments/assets/c2acc3f9-d97e-4b58-978f-965963875687)
+![Screenshot_1745930294](https://github.com/user-attachments/assets/d08ac3a7-e0ce-4ce8-95a9-9bfa452421e4)
+![Screenshot_1745930303](https://github.com/user-attachments/assets/423ed431-032d-440a-a280-2fa8972a0191)
+![Screenshot_1745930317](https://github.com/user-attachments/assets/cba7694c-a9ee-4974-a531-bbe8c182674e)
+![Screenshot_1745930362](https://github.com/user-attachments/assets/1e04366a-6547-4ab3-a0c3-476feeda72f4)
+![Screenshot_1745930402](https://github.com/user-attachments/assets/9b8ccc9e-3518-4d22-9212-c3c7672eb934)
+![Screenshot_1745930402](https://github.com/user-attachments/assets/a517d8b1-efe7-4ac8-a04d-02452e082916)
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
